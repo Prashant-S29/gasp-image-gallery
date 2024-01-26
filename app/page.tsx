@@ -1,7 +1,18 @@
+"use client";
+
 import BACKGROUND from "@/clientComponents/background";
-import React from "react";
+import React, { useEffect } from "react";
 
 const HOME = () => {
+  useEffect(() => {
+    (async () => {
+      //@ts-ignore
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+
+      const locomotiveScroll = new LocomotiveScroll();
+    })();
+  }, []);
+
   return (
     <>
       <div className="w-full min-h-screen flex justify-center items-center">
